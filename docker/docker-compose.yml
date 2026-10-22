@@ -51,6 +51,10 @@ services:
       - "8554:8554"  # RTSP
       - "8888:8888"  # WebRTC
       - "8889:8889"  # HLS
+    environment:
+      - MTX_WEBRTCICESERVERS2_0_URL
+      - MTX_WEBRTCICESERVERS2_0_USERNAME
+      - MTX_WEBRTCICESERVERS2_0_PASSWORD
     networks:
       - bantai-network
     restart: unless-stopped

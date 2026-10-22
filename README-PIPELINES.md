@@ -178,6 +178,22 @@ Access processed streams:
 - **WebRTC**: `http://localhost:8889` (browser-compatible)
 - **HLS**: `http://localhost:8888/stream1`, `http://localhost:8888/stream2`
 
+### Optional TURN server for WebRTC
+
+If WebRTC clients cannot connect directly because of NAT or firewall restrictions,
+configure a reachable TURN server in `docker/.env`:
+
+```env
+MTX_WEBRTCICESERVERS2_0_URL=turn:turn.example.com:3478?transport=tcp
+MTX_WEBRTCICESERVERS2_0_USERNAME=your-turn-username
+MTX_WEBRTCICESERVERS2_0_PASSWORD=your-turn-password
+```
+
+Use credentials supplied by your TURN provider and keep the real `.env` file
+private. MediaMTX passes this ICE server to itself and WebRTC clients; the TURN
+server must be reachable from both. Leave these variables unset to keep TURN
+disabled. Restart the Compose services after changing them.
+
 ## Monitoring Commands
 
 ```bash
