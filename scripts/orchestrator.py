@@ -112,7 +112,10 @@ class PipelineOrchestrator:
                 'PIPELINE_TYPE': pipeline.pipeline_type,
                 'STREAM_URL': pipeline.stream_url,
                 'OUTPUT_STREAM_URL': output_url,
-                'MODEL_PATH': '/app/weights/yolo26s.pt',
+                'MODEL_PATH': os.getenv(
+                    'MODEL_PATH',
+                    '/app/weights/weapons-3class-enhanced-v2/best.pt'
+                ),
                 'REDIS_HOST': os.getenv('REDIS_HOST', 'redis'),
                 'REDIS_PORT': os.getenv('REDIS_PORT', '6379'),
                 'HEALTH_CHECK_INTERVAL': '10',

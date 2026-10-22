@@ -10,7 +10,7 @@ from ultralytics import YOLO
 import argparse
 
 def test_camera(
-    model_path="runs/detect/runs/weapons-merged-enhanced/weights/best.pt",
+    model_path="runs/detect/runs/weapons-3class-enhanced-v2/weights/best.pt",
     source=0,  # 0 for webcam, or RTSP URL
     conf_threshold=0.25,
     show_fps=True,
@@ -153,7 +153,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Test weapons detection on camera")
     parser.add_argument(
         "--model",
-        default="runs/detect/runs/weapons-merged-enhanced/weights/best.pt",
+        default="runs/detect/runs/weapons-3class-enhanced-v2/weights/best.pt",
         help="Path to trained model"
     )
     parser.add_argument(

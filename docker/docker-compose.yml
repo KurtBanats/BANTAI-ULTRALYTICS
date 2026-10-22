@@ -25,6 +25,7 @@ services:
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+      - MODEL_PATH=${MODEL_PATH:-/app/weights/weapons-3class-enhanced-v2/best.pt}
       - STREAM_1_PRIMARY_URL=${STREAM_1_PRIMARY_URL:-rtsp://camera1:8554/stream}
       - STREAM_1_BACKUP_URL=${STREAM_1_BACKUP_URL:-rtsp://camera1-backup:8554/stream}
       - STREAM_1_OUTPUT_URL=${STREAM_1_OUTPUT_URL:-rtsp://output:8554/stream1}

@@ -106,6 +106,13 @@ Environment variables in `docker-compose.yml`:
 - `HEALTH_CHECK_INTERVAL`: Health check frequency (default: 10 seconds)
 - `STREAM_TIMEOUT`: Stream failure threshold (default: 30 seconds)
 - `USE_GPU`: Enable GPU acceleration (default: true)
+- `MODEL_PATH`: Model file inside the pipeline container (default: `/app/weights/weapons-3class-enhanced-v2/best.pt`)
+
+The Docker build copies `runs/detect/runs/weapons-3class-enhanced-v2/weights/best.pt`
+into the pipeline image. Make sure that trained artifact exists before running
+`make build-pipeline` or `make build-all`. To use a different model, set
+`MODEL_PATH` to its path inside the container and update the Docker build to
+include that file.
 
 ## How It Works
 

@@ -330,7 +330,10 @@ def load_config_from_env() -> PipelineConfig:
         pipeline_id=os.getenv('PIPELINE_ID', 'pipeline-1'),
         pipeline_type=os.getenv('PIPELINE_TYPE', 'primary'),
         stream_url=os.getenv('STREAM_URL', 'rtsp://localhost:8554/stream'),
-        model_path=os.getenv('MODEL_PATH', '/app/weights/yolo26s.pt'),
+        model_path=os.getenv(
+            'MODEL_PATH',
+            '/app/weights/weapons-3class-enhanced-v2/best.pt'
+        ),
         redis_host=os.getenv('REDIS_HOST', 'redis'),
         redis_port=int(os.getenv('REDIS_PORT', '6379')),
         health_check_interval=int(os.getenv('HEALTH_CHECK_INTERVAL', '10')),

@@ -33,6 +33,7 @@ COPY src/ /app/src/
 COPY scripts/ /app/scripts/
 COPY configs/ /app/configs/
 COPY weights/ /app/weights/
+COPY runs/detect/runs/weapons-3class-enhanced-v2/weights/best.pt /app/weights/weapons-3class-enhanced-v2/best.pt
 COPY pyproject.toml /app/
 
 # Compile Python bytecode for faster startup
